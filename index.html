@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorry, My Angel 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(to top right, #ff9a9e, #fad0c4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 3em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px #f08a96;
+    }
+
+    p {
+      color: #fff;
+      font-size: 1.4em;
+      text-align: center;
+      margin: 10px 30px;
+      max-width: 600px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 20px;
+      background-color: #fff;
+      color: #ff5e78;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #ff5e78;
+      color: #fff;
+    }
+
+    #hiddenMessage {
+      display: none;
+      font-size: 1.3em;
+      color: #fff;
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 15px;
+      border-radius: 15px;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(-45deg);
+      animation: float 6s infinite ease-in-out;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(-45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(-45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>I'm Sorry, My Angel 😔</h1>
+  <p>To my princess, my dear pretty girl, my everything...  
+    I know we had a misunderstanding, and I want to say from the bottom of my heart — I'm really sorry.  
+    You mean the world to me, and I never want to lose your smile. 🌸  
+    Please forgive me, my angel.</p>
+  <button onclick="showMessage()">Click me, Princess 👑</button>
+  <div id="hiddenMessage">💌 I love you more than words can ever express. You're the best thing that's ever happened to me. Let's turn this small bump into a beautiful memory. I’m waiting to hold your hand again. 💖</div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('hiddenMessage').style.display = 'block';
+    }
+
+    // create hearts
+    for (let i = 0; i < 30; i++) {
+      let heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 4 + Math.random() * 2 + 's';
+      heart.style.opacity = Math.random();
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
